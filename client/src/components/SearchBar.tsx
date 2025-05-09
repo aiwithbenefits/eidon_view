@@ -24,7 +24,7 @@ export default function SearchBar({ onSearch, initialValue = "" }: SearchBarProp
         placeholder="Search your digital history... (Try: 'meeting notes date:today')"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        className="w-full px-4 py-2 border border-eidon-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        className="w-full px-4 py-2 glass-input text-blue-900 placeholder:text-blue-400/70"
       />
       <div className="absolute right-3 top-2.5 text-eidon-gray-400">
         <SearchIcon className="w-5 h-5" />

@@ -12,7 +12,7 @@ export default function MetadataCard({ title, appName, url, timestamp }: Metadat
   const formattedDate = format(new Date(timestamp), "MMMM d, yyyy - HH:mm:ss");
   
   return (
-    <Card className="bg-white rounded-lg shadow-sm">
+    <Card className="glass-card">
       <CardContent className="pt-4">
         <h3 className="text-sm font-semibold text-eidon-gray-700 mb-3">Metadata</h3>
         <dl className="space-y-2 text-sm">

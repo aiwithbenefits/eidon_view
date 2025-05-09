@@ -45,7 +45,7 @@ export default function CaptureControl() {
   if (isActive) {
     return (
       <Button 
-        className="flex items-center px-3 py-1.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-150 bg-green-100 text-green-700 hover:bg-green-200" 
+        className="flex items-center px-3 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500/30 transition-all duration-200 bg-green-500/20 backdrop-blur-md text-green-700 hover:bg-green-500/30 border border-green-200/30 shadow-sm" 
         onClick={handleToggle}
         disabled={isLoading || toggleCapture.isPending}
       >
@@ -59,7 +59,7 @@ export default function CaptureControl() {
   } else {
     return (
       <Button 
-        className="flex items-center px-3 py-1.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-150 bg-red-100 text-red-700 hover:bg-red-200" 
+        className="flex items-center px-3 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500/30 transition-all duration-200 bg-red-500/20 backdrop-blur-md text-red-700 hover:bg-red-500/30 border border-red-200/30 shadow-sm" 
         onClick={handleToggle}
         disabled={isLoading || toggleCapture.isPending}
       >

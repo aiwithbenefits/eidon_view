@@ -16,7 +16,7 @@ export default function ActiveFilters({ filters, onRemove }: ActiveFiltersProps)
       {filters.map((filter, index) => (
         <div 
           key={`${filter.key}-${index}`}
-          className="inline-flex items-center bg-blue-500/10 text-blue-700 px-2 py-1 rounded-md"
+          className="inline-flex items-center bg-blue-500/20 backdrop-blur-sm text-blue-700 px-3 py-1 rounded-full border border-blue-200/30 shadow-sm"
         >
           <span>{filter.display}</span>
           <button 
