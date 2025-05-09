@@ -34,11 +34,11 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
   if (isError) {
     return (
       <div className="text-center py-12 glass-container p-8 mx-auto max-w-md">
-        <h2 className="text-lg font-medium text-red-600 mb-2">Error loading timeline</h2>
-        <p className="text-blue-700 mb-4">Failed to load timeline entries.</p>
+        <h2 className="text-lg font-medium text-red-600 dark:text-red-400 mb-2">Error loading timeline</h2>
+        <p className="text-blue-700 dark:text-blue-300 mb-4">Failed to load timeline entries.</p>
         <Button 
           variant="outline"
-          className="bg-white/50 backdrop-blur-sm border-white/30 text-blue-700 hover:bg-white/70"
+          className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-white/30 dark:border-gray-700/30 text-blue-700 dark:text-blue-300 hover:bg-white/70 dark:hover:bg-gray-700/70"
           onClick={() => window.location.reload()}
         >
           Retry
@@ -50,8 +50,8 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
   if (entries.length === 0) {
     return (
       <div className="text-center py-12 glass-container p-8 mx-auto max-w-md">
-        <h2 className="text-lg font-medium text-blue-800 mb-2">No entries found</h2>
-        <p className="text-blue-700 mb-4">
+        <h2 className="text-lg font-medium text-blue-800 dark:text-blue-300 mb-2">No entries found</h2>
+        <p className="text-blue-700 dark:text-blue-400 mb-4">
           No screenshots match your current criteria.
         </p>
       </div>
@@ -70,7 +70,7 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
         <div className="mt-8 text-center">
           <Button 
             variant="outline"
-            className="inline-flex items-center bg-white/50 backdrop-blur-sm border-white/30 text-blue-700 hover:bg-white/70 px-4 py-2 rounded-full"
+            className="inline-flex items-center bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-white/30 dark:border-gray-700/30 text-blue-700 dark:text-blue-300 hover:bg-white/70 dark:hover:bg-gray-700/70 px-4 py-2 rounded-full"
             onClick={onLoadMore}
           >
             Load More

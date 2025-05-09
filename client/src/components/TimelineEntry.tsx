@@ -22,7 +22,7 @@ export default function TimelineEntry({ entry }: TimelineEntryProps) {
   
   return (
     <Card 
-      className="glass-card hover:shadow-md transition-all duration-200 overflow-hidden cursor-pointer hover:bg-white/80" 
+      className="glass-card hover:shadow-md transition-all duration-200 overflow-hidden cursor-pointer hover:bg-white/80 dark:hover:bg-gray-800/80" 
       onClick={handleClick}
     >
       <div className="relative">
@@ -37,11 +37,11 @@ export default function TimelineEntry({ entry }: TimelineEntryProps) {
       </div>
       <CardContent className="p-3">
         <div className="flex items-center mb-2">
-          <span className="text-sm font-medium text-blue-900 line-clamp-1">
+          <span className="text-sm font-medium text-blue-900 dark:text-blue-300 line-clamp-1">
             {entry.title || entry.windowTitle || "Untitled Screenshot"}
           </span>
         </div>
-        <div className="flex items-center text-xs text-blue-700 mb-2">
+        <div className="flex items-center text-xs text-blue-700 dark:text-blue-400 mb-2">
           <MonitorIcon className="w-4 h-4 mr-1" />
           <span className="mr-2">{entry.appName || "Unknown Application"}</span>
           
@@ -53,7 +53,7 @@ export default function TimelineEntry({ entry }: TimelineEntryProps) {
           )}
         </div>
         {entry.extractedText && (
-          <p className="text-xs text-blue-600/70 line-clamp-2">
+          <p className="text-xs text-blue-600/70 dark:text-blue-400/70 line-clamp-2">
             {entry.extractedText}
           </p>
         )}
