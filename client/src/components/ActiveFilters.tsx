@@ -16,11 +16,11 @@ export default function ActiveFilters({ filters, onRemove }: ActiveFiltersProps)
       {filters.map((filter, index) => (
         <div 
           key={`${filter.key}-${index}`}
-          className="inline-flex items-center bg-blue-500/20 backdrop-blur-sm text-blue-700 px-3 py-1 rounded-full border border-blue-200/30 shadow-sm"
+          className="inline-flex items-center bg-blue-500/20 dark:bg-blue-500/30 backdrop-blur-sm text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full border border-blue-200/30 dark:border-blue-500/30 shadow-sm"
         >
           <span>{filter.display}</span>
           <button 
-            className="ml-1 focus:outline-none" 
+            className="ml-1 focus:outline-none hover:text-blue-900 dark:hover:text-blue-100 transition-colors" 
             onClick={() => onRemove(filter)}
             aria-label={`Remove ${filter.key} filter`}
           >

@@ -4,6 +4,8 @@ import ActiveFilters from "./ActiveFilters";
 import CaptureControl from "./CaptureControl";
 import Footer from "./Footer";
 import { useSearch } from "@/hooks/useSearch";
+import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,13 +22,15 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="flex flex-col min-h-screen font-sans text-foreground">
       {/* Top Bar */}
-      <header className="sticky top-0 z-10 bg-white/70 backdrop-blur-lg border-b border-white/20 shadow-sm">
+      <header className="sticky top-0 z-10 bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg border-b border-white/20 dark:border-gray-700/20 shadow-sm">
         <div className="container mx-auto px-4 py-3">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center">
               {/* App Logo/Title */}
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Eidon</h1>
-              <span className="ml-2 text-xs bg-white/30 backdrop-blur-sm border border-white/20 text-blue-800 px-2.5 py-0.5 rounded-full shadow-sm">Personal Digital History</span>
+              <Logo />
+              <span className="ml-2 text-xs bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 text-blue-800 dark:text-blue-300 px-2.5 py-0.5 rounded-full shadow-sm">
+                Personal Digital History
+              </span>
             </div>
 
             {/* Search Bar */}
@@ -35,10 +39,13 @@ export default function Layout({ children }: LayoutProps) {
               initialValue={searchQuery} 
             />
 
-            {/* Capture Controls */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-blue-800">Capture:</span>
-              <CaptureControl />
+            {/* Capture Controls and Theme Toggle */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-blue-800 dark:text-blue-300">Capture:</span>
+                <CaptureControl />
+              </div>
+              <ThemeToggle />
             </div>
           </div>
           
