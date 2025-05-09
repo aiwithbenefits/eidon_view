@@ -18,14 +18,14 @@ export default function OCRTextCard({ text }: OCRTextCardProps) {
   };
   
   return (
-    <Card className="bg-white rounded-lg shadow-sm">
+    <Card className="glass-card">
       <CardContent className="pt-4 pb-2">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="text-sm font-semibold text-eidon-gray-700">Extracted Text</h3>
+          <h3 className="text-sm font-semibold text-blue-800">Extracted Text</h3>
           <Button
             variant="ghost"
             size="sm"
-            className="h-8 text-xs"
+            className="h-8 text-xs text-blue-700 hover:bg-blue-100/50"
             onClick={handleCopy}
             disabled={copied}
           >
@@ -42,7 +42,7 @@ export default function OCRTextCard({ text }: OCRTextCardProps) {
             )}
           </Button>
         </div>
-        <div className="h-96 overflow-y-auto text-sm font-mono text-eidon-gray-800 whitespace-pre-wrap bg-eidon-gray-100 p-3 rounded">
+        <div className="h-96 overflow-y-auto text-sm font-mono text-blue-800 whitespace-pre-wrap bg-white/30 backdrop-blur-sm border border-white/40 p-3 rounded-lg shadow-inner">
           {text || "No text extracted"}
         </div>
       </CardContent>

@@ -18,7 +18,7 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div key={i} className="glass-card overflow-hidden">
             <Skeleton className="w-full h-48" />
             <div className="p-3">
               <Skeleton className="h-5 w-3/4 mb-2" />
@@ -33,18 +33,25 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
   
   if (isError) {
     return (
-      <div className="text-center py-8">
-        <h2 className="text-lg font-medium text-red-600">Error loading timeline</h2>
-        <p className="text-eidon-gray-600 mt-2">Failed to load timeline entries.</p>
+      <div className="text-center py-12 glass-container p-8 mx-auto max-w-md">
+        <h2 className="text-lg font-medium text-red-600 mb-2">Error loading timeline</h2>
+        <p className="text-blue-700 mb-4">Failed to load timeline entries.</p>
+        <Button 
+          variant="outline"
+          className="bg-white/50 backdrop-blur-sm border-white/30 text-blue-700 hover:bg-white/70"
+          onClick={() => window.location.reload()}
+        >
+          Retry
+        </Button>
       </div>
     );
   }
   
   if (entries.length === 0) {
     return (
-      <div className="text-center py-8">
-        <h2 className="text-lg font-medium text-eidon-gray-700">No entries found</h2>
-        <p className="text-eidon-gray-600 mt-2">
+      <div className="text-center py-12 glass-container p-8 mx-auto max-w-md">
+        <h2 className="text-lg font-medium text-blue-800 mb-2">No entries found</h2>
+        <p className="text-blue-700 mb-4">
           No screenshots match your current criteria.
         </p>
       </div>
@@ -52,7 +59,7 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
   }
   
   return (
-    <Fragment>
+    <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {entries.map((entry) => (
           <TimelineEntry key={entry.id} entry={entry} />
@@ -63,7 +70,7 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
         <div className="mt-8 text-center">
           <Button 
             variant="outline"
-            className="inline-flex items-center"
+            className="inline-flex items-center bg-white/50 backdrop-blur-sm border-white/30 text-blue-700 hover:bg-white/70 px-4 py-2 rounded-full"
             onClick={onLoadMore}
           >
             Load More
@@ -71,6 +78,6 @@ export default function Timeline({ entries, isLoading, isError, hasMore, onLoadM
           </Button>
         </div>
       )}
-    </Fragment>
+    </>
   );
 }
