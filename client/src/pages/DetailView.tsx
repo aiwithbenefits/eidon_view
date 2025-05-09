@@ -40,8 +40,8 @@ export default function DetailView() {
   if (isError || !entry) {
     return (
       <div className="text-center py-8">
-        <h2 className="text-lg font-medium text-red-600">Error loading screenshot</h2>
-        <p className="text-eidon-gray-600 mt-2">Failed to load the requested screenshot.</p>
+        <h2 className="text-lg font-medium text-red-600 dark:text-red-400">Error loading screenshot</h2>
+        <p className="text-gray-600 dark:text-gray-300 mt-2">Failed to load the requested screenshot.</p>
         <Button 
           variant="outline" 
           className="mt-4" 
@@ -87,7 +87,7 @@ export default function DetailView() {
             <ChevronLeft className="w-5 h-5" />
           </Button>
           
-          <span className="text-sm text-eidon-gray-600">
+          <span className="text-sm text-gray-600 dark:text-gray-300">
             {formattedDate} • {formattedTime}
           </span>
           
@@ -106,7 +106,7 @@ export default function DetailView() {
       {/* Screenshot and Metadata */}
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Screenshot Container */}
-        <div className="lg:w-3/4 bg-white rounded-lg shadow-sm p-4">
+        <div className="lg:w-3/4 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
           <ScreenshotDetail 
             imageUrl={entry.imagePath} 
             title={entry.title || "Untitled Screenshot"} 
