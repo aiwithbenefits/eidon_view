@@ -14,25 +14,25 @@ export default function MetadataCard({ title, appName, url, timestamp }: Metadat
   return (
     <Card className="glass-card">
       <CardContent className="pt-4">
-        <h3 className="text-sm font-semibold text-blue-800 mb-3">Metadata</h3>
+        <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-3">Metadata</h3>
         <dl className="space-y-3 text-sm">
           <div>
-            <dt className="text-blue-600 text-xs">Title</dt>
-            <dd className="text-blue-900 font-medium">{title || "-"}</dd>
+            <dt className="text-blue-600 dark:text-blue-400 text-xs">Title</dt>
+            <dd className="text-blue-900 dark:text-blue-200 font-medium">{title || "-"}</dd>
           </div>
           <div>
-            <dt className="text-blue-600 text-xs">Application</dt>
-            <dd className="text-blue-900">{appName || "-"}</dd>
+            <dt className="text-blue-600 dark:text-blue-400 text-xs">Application</dt>
+            <dd className="text-blue-900 dark:text-blue-200">{appName || "-"}</dd>
           </div>
           <div>
-            <dt className="text-blue-600 text-xs">URL</dt>
-            <dd className="text-blue-900 truncate">
+            <dt className="text-blue-600 dark:text-blue-400 text-xs">URL</dt>
+            <dd className="text-blue-900 dark:text-blue-200 truncate">
               {url ? (
                 <a 
                   href={url.startsWith('http') ? url : `https://${url}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 hover:underline truncate inline-block max-w-full transition-colors"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline truncate inline-block max-w-full transition-colors"
                 >
                   {url}
                 </a>
@@ -42,8 +42,8 @@ export default function MetadataCard({ title, appName, url, timestamp }: Metadat
             </dd>
           </div>
           <div>
-            <dt className="text-blue-600 text-xs">Date & Time</dt>
-            <dd className="text-blue-900">{formattedDate}</dd>
+            <dt className="text-blue-600 dark:text-blue-400 text-xs">Date & Time</dt>
+            <dd className="text-blue-900 dark:text-blue-200">{formattedDate}</dd>
           </div>
         </dl>
       </CardContent>
